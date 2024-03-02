@@ -41,6 +41,7 @@
         background-color: transparent;
         color: #fff;
         font-size: x-large;
+        text-align: right;
       }
       .numberContainer {
         display: grid;
@@ -48,7 +49,7 @@
         gap: 1rem;
         margin-top: 2.5rem;
       }
-      .numberContainer > div {
+      .numberContainer > buttons {
         border: 1px solid #000;
         text-align: center;
         padding: 1rem;
@@ -94,29 +95,25 @@
         <button type="button" class="clear btns">AC</button>
         <button type="button" class="btns delete">Del</button>
         <button type="button" class="sign btns square">x<sup>2</sup></button>
-        <button type="button" value="/" class="sign btns division">/</button>
+        <button type="button" value="/" class="sign btns operand">/</button>
 
-        <button type="button" value="7" class="7 btns">7</button>
-        <button type="button" value="8" class="8 btns">8</button>
-        <button type="button" value="9" class="9 btns">9</button>
-        <button type="button" value="-" class="sign btns substraction">
-          -
-        </button>
+        <button type="button" value="7" class="btns numbers">7</button>
+        <button type="button" value="8" class="btns numbers">8</button>
+        <button type="button" value="9" class="btns numbers">9</button>
+        <button type="button" value="-" class="sign btns operand">-</button>
 
-        <button type="button" value="4" class="4 btns">4</button>
-        <button type="button" value="5" class="5 btns">5</button>
-        <button type="button" value="6" class="6 btns">6</button>
-        <button type="button" value="+" class="sign btns addition">+</button>
+        <button type="button" value="4" class="btns numbers">4</button>
+        <button type="button" value="5" class="btns numbers">5</button>
+        <button type="button" value="6" class="btns numbers">6</button>
+        <button type="button" value="+" class="sign btns operand">+</button>
 
-        <button type="button" value="1" class="1 btns">1</button>
-        <button type="button" value="2" class="2 btns">2</button>
-        <button type="button" value="3" class="3 btns">3</button>
-        <button type="button" value="*" class="sign btns multiplication">
-          *
-        </button>
+        <button type="button" value="1" class="one btns numbers">1</button>
+        <button type="button" value="2" class="two btns numbers">2</button>
+        <button type="button" value="3" class="three btns numbers">3</button>
+        <button type="button" value="*" class="sign btns operand">*</button>
 
-        <button type="button" class="decimalPoint btns">.</button>
-        <button type="button" value="0" class="0 btns">0</button>
+        <button type="button" value="." class="decimalPoint btns">.</button>
+        <button type="button" value="0" class="0 btns numbers">0</button>
         <button type="button" value="=" class="btns Equals btnEqual">=</button>
       </div>
     </div>
