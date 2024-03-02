@@ -23,23 +23,30 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        color: #fff;
+        background: linear-gradient(to left, #bf3636, #ffa600bd);
       }
       .container {
-        border: 1px solid red;
         width: 25%;
-        height: 70%;
-        padding: 1rem;
+        height: 76%;
+        padding: 2.5rem 2rem;
+        background-color: #000000d6;
+        border-radius: 15px;
       }
       .inputHolder {
-        border: 1px solid blue;
+        border: 1px solid #808080d1;
+        border-radius: 35px;
         width: 100%;
-        padding: 1.5rem;
+        padding: 1rem;
+        background-color: transparent;
+        color: #fff;
+        font-size: x-large;
       }
       .numberContainer {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
-        margin-top: 2rem;
+        margin-top: 2.5rem;
       }
       .numberContainer > div {
         border: 1px solid #000;
@@ -49,31 +56,64 @@
       .Equals {
         grid-column: span 2;
       }
+
+      .btns {
+        background: #212020;
+        box-shadow: inset 2px 1.5px 3px #fff, inset -2px -1.5px 3px #a4a2a2;
+        padding: 1rem;
+        font-size: larger;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        text-size-adjust: left;
+        transition: transform 0.35s;
+      }
+      .clear,
+      .delete {
+        background-color: #c02f2f;
+      }
+      .btns:hover {
+        transform: translateY(-2px);
+      }
+      .btns:active {
+        transform: translateY(0px);
+      }
+      .btnEqual {
+        background-color: #05bc7f;
+      }
+      .sign {
+        background-color: #185050;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="inputHolder">HELLO</div>
+      <input type="text" class="inputHolder" />
       <div class="numberContainer">
-        <div class="clear">C</div>
-        <div class="delete">Del</div>
-        <div class="%">%</div>
-        <div class="/">/</div>
-        <div class="7">7</div>
-        <div class="8">8</div>
-        <div class="9">9</div>
-        <div class="-">-</div>
-        <div class="4">4</div>
-        <div class="5">5</div>
-        <div class="6">6</div>
-        <div class="+">+</div>
-        <div class="1">1</div>
-        <div class="2">2</div>
-        <div class="3">3</div>
-        <div class="X">*</div>
-        <div class=".">.</div>
-        <div class="0">0</div>
-        <div class="Equals">=</div>
+        <button type="button" class="btns clear">AC</button>
+        <button type="button" class="btns delete">Del</button>
+        <button type="button" class="sign btns">%</button>
+        <button type="button" value="/" class="sign btns">/</button>
+
+        <button type="button" value="7" class="7 btns">7</button>
+        <button type="button" value="8" class="8 btns">8</button>
+        <button type="button" value="9" class="9 btns">9</button>
+        <button type="button" value="-" class="sign btns">-</button>
+
+        <button type="button" value="4" class="4 btns">4</button>
+        <button type="button" value="5" class="5 btns">5</button>
+        <button type="button" value="6" class="6 btns">6</button>
+        <button type="button" value="+" class="sign btns">+</button>
+
+        <button type="button" value="1" class="1 btns">1</button>
+        <button type="button" value="2" class="2 btns">2</button>
+        <button type="button" value="3" class="3 btns">3</button>
+        <button type="button" value="*" class="sign btns">*</button>
+
+        <button type="button" class="decimalPoint btns">.</button>
+        <button type="button" value="0" class="0 btns">0</button>
+        <button type="button" value="=" class="btns Equals btnEqual">=</button>
       </div>
     </div>
   </body>
