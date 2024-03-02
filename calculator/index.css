@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: linear-gradient(to left, #bf3636, #ffa600bd);
+}
+.container {
+  width: 25%;
+  height: 76%;
+  padding: 2.5rem 2rem;
+  background-color: #000000d6;
+  border-radius: 15px;
+}
+.inputHolder {
+  border: 1px solid #808080d1;
+  border-radius: 35px;
+  width: 100%;
+  padding: 1rem;
+  background-color: transparent;
+  color: #fff;
+  font-size: x-large;
+  text-align: right;
+}
+.numberContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.numberContainer > buttons {
+  border: 1px solid #000;
+  text-align: center;
+  padding: 1rem;
+}
+.Equals {
+  grid-column: span 2;
+}
+
+.btns {
+  background: #212020;
+  box-shadow: inset 2px 1.5px 3px #fff, inset -2px -1.5px 3px #a4a2a2;
+  padding: 1rem;
+  font-size: larger;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-size-adjust: left;
+  transition: transform 0.35s;
+}
+.clear,
+.delete {
+  background-color: #c02f2f;
+}
+.btns:hover {
+  transform: translateY(-2px);
+}
+.btns:active {
+  transform: translateY(0px);
+}
+.btnEqual {
+  background-color: #05bc7f;
+}
+.sign {
+  background-color: #185050;
+}
