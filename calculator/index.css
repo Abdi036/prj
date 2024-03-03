@@ -23,7 +23,7 @@ body {
   border: 1px solid #808080d1;
   border-radius: 35px;
   width: 100%;
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: transparent;
   color: #fff;
   font-size: x-large;
@@ -32,8 +32,8 @@ body {
 .numberContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.2rem;
-  margin-top: 2.5rem;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 .numberContainer > buttons {
   border: 1px solid #000;

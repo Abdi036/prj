@@ -45,12 +45,8 @@ numbersBtn.forEach((btn) => {
 });
 
 // handling dot
-
 decimalBtn.addEventListener("click", () => {
-  if (inputValue.value.includes(decimalBtn.value)) return;
-  else {
-    inputValue.value += decimalBtn.value;
-  }
+  inputValue.value += decimalBtn.value;
 });
 
 // handling operands
@@ -73,22 +69,31 @@ operandBtn.forEach((opp) => {
   });
 });
 
-// operandBtn.forEach((opp) => {
-//   opp.addEventListener("click", () => {
-//     let currentValue = inputValue.value;
-//     const clickedBtn = opp.value;
+// handling calculations
+equalBtn.addEventListener("click", () => {
+  const opp = inputValue.value.match(/[+\-*/]/g);
+  const operands = inputValue.value.split(/[+\-*/]/g);
+  let currentValue = operands[0];
 
-//     if (
-//       currentValue.endsWith("+") ||
-//       currentValue.endsWith("-") ||
-//       currentValue.endsWith("*") ||
-//       currentValue.endsWith("/")
-//     ) {
-//       currentValue = currentValue.slice(0, -1) + clickedBtn;
-//     } else {
-//       currentValue += clickedBtn;
-//     }
+  for (let i = 0; i < operands.length - 1; i++) {
+    const newValue = +operands[i + 1];
 
-//     inputValue.value = currentValue;
-//   });
-// });
+    switch (opp[i]) {
+      case "+":
+        currentValue += newValue;
+        break;
+      case "-":
+        currentValue -= newValue;
+        break;
+      case "*":
+        currentValue *= newValue;
+        break;
+      case "/":
+        currentValue /= newValue;
+        break;
+      default:
+        alert("Insert correct operand");
+    }
+    inputValue.value = currentValue;
+  }
+});
