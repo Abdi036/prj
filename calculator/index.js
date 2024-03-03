@@ -45,9 +45,25 @@ numbersBtn.forEach((btn) => {
 });
 
 // handling dot
-decimalBtn.addEventListener("click", () => {
-  inputValue.value += decimalBtn.value;
+
+operandBtn.forEach((operator) => {
+  operator.addEventListener("click", () => {
+    // Update lastInput to operator when an operator is clicked
+    lastInput = "operator";
+  });
 });
+
+numbersBtn.forEach((number) => {
+  number.addEventListener("click", () => {
+    // Update lastInput to number when a number is clicked
+    lastInput = "number";
+  });
+});
+
+// Check if a character is an operator
+function isOperator(char) {
+  return operandBtn.some((btn) => btn.value === char);
+}
 
 // handling operands
 operandBtn.forEach((opp) => {
@@ -73,10 +89,10 @@ operandBtn.forEach((opp) => {
 equalBtn.addEventListener("click", () => {
   const opp = inputValue.value.match(/[+\-*/]/g);
   const operands = inputValue.value.split(/[+\-*/]/g);
-  let currentValue = operands[0];
+  let currentValue = +operands[0];
 
   for (let i = 0; i < operands.length - 1; i++) {
-    const newValue = +operands[i + 1];
+    const newValue = Number(operands[i + 1]);
 
     switch (opp[i]) {
       case "+":
