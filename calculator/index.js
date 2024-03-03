@@ -54,7 +54,41 @@ decimalBtn.addEventListener("click", () => {
 });
 
 // handling operands
-
 operandBtn.forEach((opp) => {
-  opp.addEventListener("click", () => {});
+  opp.addEventListener("click", () => {
+    const clickedBtn = opp.value;
+    let currentValue = inputValue.value;
+
+    if (
+      currentValue.endsWith("+") ||
+      currentValue.endsWith("-") ||
+      currentValue.endsWith("*") ||
+      currentValue.endsWith("/")
+    ) {
+      currentValue = currentValue.slice(0, -1) + clickedBtn;
+    } else {
+      currentValue += clickedBtn;
+    }
+    inputValue.value = currentValue;
+  });
 });
+
+// operandBtn.forEach((opp) => {
+//   opp.addEventListener("click", () => {
+//     let currentValue = inputValue.value;
+//     const clickedBtn = opp.value;
+
+//     if (
+//       currentValue.endsWith("+") ||
+//       currentValue.endsWith("-") ||
+//       currentValue.endsWith("*") ||
+//       currentValue.endsWith("/")
+//     ) {
+//       currentValue = currentValue.slice(0, -1) + clickedBtn;
+//     } else {
+//       currentValue += clickedBtn;
+//     }
+
+//     inputValue.value = currentValue;
+//   });
+// });
