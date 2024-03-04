@@ -5,7 +5,7 @@ const equalBtn = document.querySelector(".btnEqual");
 
 const squareBtn = document.querySelector(".square"); //done
 const decimalBtn = document.querySelector(".decimalPoint");
-const operandBtn = document.querySelectorAll(".operand");
+const operatorBtn = document.querySelectorAll(".operator");
 const numbersBtn = document.querySelectorAll(".numbers");
 
 // Handling Events
@@ -45,28 +45,21 @@ numbersBtn.forEach((btn) => {
 });
 
 // handling dot
-
-operandBtn.forEach((operator) => {
-  operator.addEventListener("click", () => {
-    // Update lastInput to operator when an operator is clicked
-    lastInput = "operator";
-  });
-});
-
-numbersBtn.forEach((number) => {
-  number.addEventListener("click", () => {
-    // Update lastInput to number when a number is clicked
-    lastInput = "number";
-  });
-});
+function addDecimal() {
+  if (inputValue.value.includes(".")) return;
+  else {
+    inputValue.value += decimalBtn.value;
+  }
+}
+decimalBtn.addEventListener("click", () => addDecimal());
 
 // Check if a character is an operator
 function isOperator(char) {
-  return operandBtn.some((btn) => btn.value === char);
+  return operatorBtn.some((btn) => btn.value === char);
 }
 
 // handling operands
-operandBtn.forEach((opp) => {
+operatorBtn.forEach((opp) => {
   opp.addEventListener("click", () => {
     const clickedBtn = opp.value;
     let currentValue = inputValue.value;
