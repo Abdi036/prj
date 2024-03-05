@@ -66,6 +66,7 @@ function loadSongs(song) {
 }
 
 // handling next Btn function
+loadSongs(songs[0]);
 let indexOfSong = 0;
 function nextMusic() {
   indexOfSong++;
@@ -129,5 +130,6 @@ playBtn.addEventListener("click", () =>
 );
 previousBtn.addEventListener("click", prevMusic);
 nextBtn.addEventListener("click", nextMusic);
+music.addEventListener("ended", nextMusic);
 music.addEventListener("timeupdate", updateProgress);
 progressContainer.addEventListener("click", setProgress);
