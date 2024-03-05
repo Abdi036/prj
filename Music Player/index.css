@@ -35,14 +35,14 @@ body {
   left: 15%;
   z-index: 5;
 }
-.image_container {
+.spinner {
   animation: spin 5s linear infinite;
 }
 
 @keyframes spin {
-  /* 100% {
+  100% {
     transform: rotate(360deg);
-  } */
+  }
 }
 .music_Container {
   width: 90%;
